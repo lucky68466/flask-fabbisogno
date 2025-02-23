@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask App</title>
+    <title>Calcolo Alimentazione</title>
 </head>
 <body>
     <h1>Benvenuto nella mia Web App Flask!</h1>
+    
+    <form action="/" method="post">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" required>
+        <br>
+
+        <label for="altezza">Altezza (cm):</label>
+        <input type="number" id="altezza" name="altezza" required>
+        <br>
+
+        <label for="eta">Età:</label>
+        <input type="number" id="eta" name="eta" required>
+        <br>
+
+        <label for="genere">Genere:</label>
+        <select id="genere" name="genere">
+            <option value="maschio">Maschio</option>
+            <option value="femmina">Femmina</option>
+        </select>
+        <br>
+
+        <label for="attivita">Livello di attività:</label>
+        <select id="attivita" name="attivita">
+            <option value="1.2">Sedentario</option>
+            <option value="1.375">Leggermente attivo</option>
+            <option value="1.55">Moderatamente attivo</option>
+            <option value="1.725">Molto attivo</option>
+            <option value="1.9">Atleta</option>
+        </select>
+        <br>
+
+        <button type="submit">Calcola</button>
+    </form>
+
+    {% if risultato %}
+        <h2>Risultato:</h2>
+        <p>Il tuo fabbisogno calorico giornaliero è di <strong>{{ risultato }}</strong> kcal.</p>
+    {% endif %}
 </body>
 </html>
+
